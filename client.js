@@ -60,7 +60,8 @@ exports.createClient = (client) => {
       })       
     },
   db.getRandom = (obj) => {
-    // Generates 10 points that is in a 1km radius from the given lat and lng point.
+    // execute function, with center (c) radius (r) count (n)
+    // Generates n points that is in a r km radius from the given c.
     return new Promise (async (resolve, reject) => {      
       let randomGeoPoints = await generateRandomPoints({'lat':30.2672, 'lng':-97.7431}, 1000, 10);  
       resolve(randomGeoPoints)
