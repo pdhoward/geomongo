@@ -66,6 +66,24 @@ exports.createClient = (client) => {
       let randomGeoPoints = await generateRandomPoints({'lat':30.2672, 'lng':-97.7431}, 1000, 10);  
       resolve(randomGeoPoints)
     })         
+  },
+  db.stats = () => {
+    return new Promise ((resolve, reject) => {      
+      client.db().collection('markets').aggregate([
+        {$group: {_id: "$name", count: { $sum: 1 }}},
+        {$sort: {count: -1 }}
+      ],
+      function(err, docs){
+        if (err){
+            console.log(err)
+        }
+        else{
+            docs.toArray((error, result) => {
+              if(error) console.log(error)
+              resolve(result)
+            })
+       }})
+    })
   }
   return db   
 }

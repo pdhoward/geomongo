@@ -25,7 +25,11 @@ const fetchGeo = async () => {
     console.log(`-----GENERATE RANDOM GEO POINTS GIVEN CENTER AND RADIUS -----`)
     const points = await client.getRandom()
     console.log(points)
-    process(0)
+
+    console.log(`-----Aggregate Count on Market Names -----`)
+    const count = await client.stats()
+    console.log(count)
+    process.exit(0)
 }
 
 fetchGeo()
