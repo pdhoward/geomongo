@@ -6,7 +6,9 @@ GeoMongo was developed to explore the geospatial search capability of MongoDB, w
 
 ### Features
 
-* Coming soon
+* Test $geoNear function
+* Generates gps points based on seed, and radius
+* Generates stats off mongodb collection, aggregating a count on duplicate names
 
 ### Usage
 
