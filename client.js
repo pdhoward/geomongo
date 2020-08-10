@@ -63,7 +63,7 @@ exports.createClient = (client) => {
     // execute function, with center (c) radius (r) count (n)
     // Generates n points that is in a r km radius from the given c.
     return new Promise (async (resolve, reject) => {      
-      let randomGeoPoints = await generateRandomPoints({'lat':30.267153, 'lng':-97.7430608}, 600, 10);  
+      let randomGeoPoints = await generateRandomPoints({'lat':35.180976099999995, 'lng':-80.81125709999999}, 600, 10);  
       resolve(randomGeoPoints)
     }) 
   },
